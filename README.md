@@ -125,7 +125,7 @@ con precio mayor a un valor en una sola sentencia SQL.
 
 1. Clonar el repositorio:
    ```
-   git clone https://github.com/TU-USUARIO/rivera-post1-u8.git
+   git clone https://github.com/Andrea-Rivera31/rivera-post1-u8.git
    ```
 2. Crear la base de datos (ver arriba) y comprobar que MySQL esté corriendo.
 3. Entrar al proyecto y ejecutar:
