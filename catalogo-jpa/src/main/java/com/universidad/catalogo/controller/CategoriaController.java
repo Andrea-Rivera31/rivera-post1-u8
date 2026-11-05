@@ -66,8 +66,15 @@ public class CategoriaController {
     }
 
     @PostMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable Long id) {
-        service.eliminar(id);
+    public String eliminar(@PathVariable Long id, Model model) {
+        try {
+            service.eliminar(id);
+        } catch (IllegalStateException e) {
+            // Categoría con productos: se vuelve a la confirmación con el mensaje
+            model.addAttribute("categoria", service.buscarPorId(id));
+            model.addAttribute("error", e.getMessage());
+            return "categorias/confirmar-eliminar";
+        }
         return "redirect:/categorias";
     }
 }
