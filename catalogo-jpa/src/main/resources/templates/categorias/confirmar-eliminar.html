@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar categoría</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+<h1>Eliminar categoría</h1>
+
+<p class="error" th:if="${error}" th:text="${error}"></p>
+
+<p>¿Seguro que desea eliminar la categoría
+    <strong th:text="${categoria.nombre}"></strong>?</p>
+<p th:text="${categoria.descripcion}"></p>
+
+<form th:action="@{/categorias/eliminar/{id}(id=${categoria.id})}" method="post">
+    <button type="submit">Confirmar eliminación</button>
+    <a th:href="@{/categorias}">Cancelar</a>
+</form>
+</body>
+</html>
